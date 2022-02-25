@@ -1,6 +1,12 @@
+import { useContext, useEffect } from 'react'
+import { LanguageContext } from '../contexts/languageContext'
 import utilStyles from '../styles/utils.module.css'
 
 export default function Home() {
+  const {language, selectedLanguage, setSelectedLanguage} = useContext(LanguageContext)
+  useEffect(() => {
+    console.log(language.about, [selectedLanguage])
+  }, [])
   return (
     <div>
       <section className={utilStyles.headingMd}>
